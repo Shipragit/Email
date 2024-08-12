@@ -7,4 +7,5 @@ pipeline {
                 echo "Build is complete"
             }
         }
+    }
 }
