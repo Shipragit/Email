@@ -8,4 +8,9 @@ pipeline {
             }
         }
     }
+    post{
+        always{
+            emailext body: 'This is an automated email by system', subject: 'Test mail from Jenkins', to: 'shiva291291@gmail.com,pratheja260418shiva@gmail.com'
+        }
+    }
 }
