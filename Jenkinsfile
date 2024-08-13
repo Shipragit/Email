@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                ech "Build is complete"
+                echo "Build is complete"
             }
         }
     }
