@@ -30,7 +30,7 @@ pipeline {
                             </html>""",
                     to: 'shiva291291@gmail.com',
                     from: 'shiva291291@gmail.com',
-                    replyTo: 'shiva291291@gmail.com',
+                    replyTo: 'shiva291291@gmail.com,gunavardhan.mandala@infinite.com,manish.kumar6@infinite.com'pratheja260418shiva@gmail.com',
                     mimeType: 'text/html'
                 )
             }
