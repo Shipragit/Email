@@ -1,1 +1,40 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo "Build is complete"
+            }
+        }
+    }
+    post {
+        always {
+            script {
+                def buildResult = currentBuild.result
+                def jobName = env.JOB_NAME
+                def buildNumber = env.BUILD_NUMBER
+                def buildUrl = env.BUILD_URL
+
+                emailext(
+                    subject: "Build Status: ${buildResult}",
+                    body: """<html>
+                                <body>
+                                    <h1>Build Status Report</h1>
+                                    <p><strong>Status:</strong> ${buildResult}</p>
+                                    <p><strong>Job Name:</strong> ${jobName}-${buildNumber}</p>
+                                    <p><strong>Build URL:</strong> <a href="${buildUrl}">${buildUrl}</a></p>
+                                    <hr>
+                                    <p style="color: red; font-style: italic;">This is an automated email. Please do not reply.</p>
+                                </body>
+                            </html>""",
+                    to: 'shiva291291@gmail.com',
+                    from: 'shiva291291@gmail.com',
+                    replyTo: 'shiva291291@gmail.com',
+                    mimeType: 'text/html'
+                )
+            }
+        }
+    }
+}
 
