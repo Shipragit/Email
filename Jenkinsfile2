@@ -28,7 +28,7 @@ pipeline {
                                     <p style="color: red; font-style: italic;">This is an automated email. Please do not reply.</p>
                                 </body>
                             </html>""",
-                    to: 'shiva291291@gmail.com,pratheja260418shiva@gmail.com',
+                    to: 'shiva291291@gmail.com,pratheja260418shiva@gmail.com,gunavardhan.mandala@infinite.com,manish.kumar6@infinite.com',
                     from: 'shiva291291@gmail.com',
                     replyTo: 'shiva291291@gmail.com',
                     mimeType: 'text/html'
