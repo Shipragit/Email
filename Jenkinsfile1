@@ -4,7 +4,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Build is complete"
+                script {
+                    echo "Build Status: ${currentBuild.result}"
+                    echo "Job Name: ${env.JOB_NAME}"
+                    echo "Build Number: ${env.BUILD_NUMBER}"
+                    echo "Build URL: ${env.BUILD_URL}"
+                }
             }
         }
     }
@@ -14,9 +19,9 @@ pipeline {
                 subject: "Build Status: ${currentBuild.result}",
                 body: '''<html>
                             <body>
-                                <p>Build Status:${currentBuild.result}</p>
-                                <p>Job Name:${env.JOB_NAME}-${env.BUILD_NUMBER}</p>
-                                <p>Build URL:${env.BUILD_URL}</p>
+                                <p>Build Status: ${currentBuild.result}</p>
+                                <p>Job Name: ${env.JOB_NAME}-${env.BUILD_NUMBER}</p>
+                                <p>Build URL: ${env.BUILD_URL}</p>
                                 <p style="color: red;">This is an automated email. Please do not reply.</p>
                             </body>
                         </html>''',
