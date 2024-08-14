@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
 
@@ -16,8 +15,8 @@ pipeline {
                 body: '''<html>
                             <body>
                                 <p>Build Status: ${currentBuild.result}</p>
-                                <p>Job Name: ${JOB_NAME}-${BUILD_NUMBER}</p>
-                                <p>Build URL: ${BUILD_URL}</p>
+                                <p>Job Name: ${env.JOB_NAME}-${env.BUILD_NUMBER}</p>
+                                <p>Build URL: ${env.BUILD_URL}</p>
                             </body>
                         </html>''',
                 to: 'shiva291291@gmail.com',
@@ -28,3 +27,4 @@ pipeline {
         }
     }
 }
+
