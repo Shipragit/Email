@@ -23,6 +23,7 @@ pipeline {
                 from: 'shiva291291@gmail.com',
                 replyTo: 'shiva291291@gmail.com',
                 mimeType: 'text/html'
+                Note: This is an automated email do not replay
             )
         }
     }
