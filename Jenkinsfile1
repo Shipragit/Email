@@ -14,9 +14,9 @@ pipeline {
                 subject: "Build Status: ${currentBuild.result}",
                 body: '''<html>
                             <body>
-                                <p>Build Status: ${currentBuild.result}</p>
-                                <p>Job Name: ${env.JOB_NAME}-${env.BUILD_NUMBER}</p>
-                                <p>Build URL: ${env.BUILD_URL}</p>
+                                <p>Build Status:${currentBuild.result}</p>
+                                <p>Job Name:${env.JOB_NAME}-${env.BUILD_NUMBER}</p>
+                                <p>Build URL:${env.BUILD_URL}</p>
                             </body>
                         </html>''',
                 to: 'shiva291291@gmail.com',
