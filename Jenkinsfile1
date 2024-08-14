@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -8,18 +9,20 @@ pipeline {
             }
         }
     }
-    post{
-        always{
-            emailext ( body:'''<html>
-                              <body>
-                                <P>Build Status: ${current.Build.result}</p>
-                              </body>
-                            </html>''',
-                      to: 'shiva291291@gmail.com'
-                      from: 'shiva291291@gmail.com'
-                      replyTo: 'shiva291291@gmail.com'
-                      mimeType: 'text/html'
-                )
+    post {
+        always {
+            emailext(
+                subject: "Build Status",
+                body: '''<html>
+                            <body>
+                                <p>Build Status: ${currentBuild.currentResult}</p>
+                            </body>
+                        </html>''',
+                to: 'shiva291291@gmail.com',
+                from: 'shiva291291@gmail.com',
+                replyTo: 'shiva291291@gmail.com',
+                mimeType: 'text/html'
+            )
         }
     }
 }
