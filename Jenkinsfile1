@@ -10,7 +10,7 @@ pipeline {
     }
     post{
         always{
-            emailext body:'''<html>
+            emailext ( body:'''<html>
                               <body>
                                 <P>Build Status: ${current.Build.result}</p>
                               </body>
@@ -19,6 +19,7 @@ pipeline {
                       from: 'shiva291291@gmail.com'
                       replyTo: 'shiva291291@gmail.com'
                       mimeType: 'text/html'
+                )
         }
     }
 }
