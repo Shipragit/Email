@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo "Build is complete"
+            }
+        }
+    }
+    post{
+        always{
+            emailext body:'''<html>
+                              <body>
+                                <P>Build Status: ${current.Build.result}</p>
+                              </body>
+                            </html>''',
+                      to: 'shiva291291@gmail.com'
+                      from: 'shiva291291@gmail.com'
+                      replyTo: 'shiva291291@gmail.com'
+                      mimeType: 'text/html'
+        }
+    }
+}
