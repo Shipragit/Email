@@ -12,19 +12,13 @@ pipeline {
         always {
             emailext(
                 subject: "Build Status: ${currentBuild.result}",
-                body: '''<html>
-                            <body>
-                                <p>Build Status: ${currentBuild.result}</p>
-                                <p>Job Name: ${env.JOB_NAME}-${env.BUILD_NUMBER}</p>
-                                <p>Build URL: ${env.BUILD_URL}</p>
-                            </body>
-                        </html>''',
+                body: '''Build Status: ${currentBuild.result}
+                        Job Name: ${env.JOB_NAME}-${env.BUILD_NUMBER}
+                        Build URL: ${env.BUILD_URL}''',
                 to: 'shiva291291@gmail.com',
                 from: 'shiva291291@gmail.com',
-                replyTo: 'shiva291291@gmail.com',
-                mimeType: 'text/html'
+                replyTo: 'shiva291291@gmail.com'
             )
         }
     }
 }
-
