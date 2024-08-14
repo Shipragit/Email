@@ -31,6 +31,7 @@ pipeline {
                     to: 'shiva291291@gmail.com',
                     from: 'shiva291291@gmail.com',
                     replyTo: 'shiva291291@gmail.com',
+                    attachLog: true,
                     mimeType: 'text/html'
                 )
             }
