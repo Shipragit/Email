@@ -17,14 +17,14 @@ pipeline {
         always {
             emailext(
                 subject: "Build Status: ${currentBuild.result}",
-                body: '<html>
+                body: '''<html>
                             <body>
                                 <p>Build Status: ${currentBuild.result}</p>
                                 <p>Job Name: ${env.JOB_NAME}-${env.BUILD_NUMBER}</p>
                                 <p>Build URL: ${env.BUILD_URL}</p>
                                 <p style="color: red;">This is an automated email. Please do not reply.</p>
                             </body>
-                        </html>',
+                        </html>''',
                 to: 'shiva291291@gmail.com',
                 from: 'shiva291291@gmail.com',
                 replyTo: 'shiva291291@gmail.com',
