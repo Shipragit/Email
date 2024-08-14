@@ -31,7 +31,6 @@ pipeline {
                 from: "shiva291291@gmail.com"
                 replyTo: "shiva291291@gmail.com"
                 mimeType: "text/html"
-            )
         }
     }
 }
