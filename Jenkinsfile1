@@ -15,9 +15,8 @@ pipeline {
     }
     post {
         always {
-            emailext(
-                subject: "Build Status: ${currentBuild.result}",
-                // HTML content
+          
+             // HTML content
                     def htmlContent = """
                     <html>
                             <body>
